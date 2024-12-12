@@ -5,7 +5,7 @@ import { RotatingLines } from "react-loader-spinner";
 
 import styles from "./search.module.css";
 
-function Search({ setCurrency }) {
+function Search({ setCurrency, currentCoin, setCurrentCoin }) {
   const [text, setText] = useState("");
   const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -79,7 +79,13 @@ function Search({ setCurrency }) {
           )}
           <ul>
             {coins.map((coin) => (
-              <li key={coin.id}>
+              <li
+                key={coin.id}
+                onClick={() => {
+                  setCurrentCoin(coin.id);
+                  setText(null);
+                }}
+              >
                 <img src={coin.thumb} />
                 <p>{coin.name}</p>
               </li>

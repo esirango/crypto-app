@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import chartUp from "../assets/chart-up.svg";
 import chartDown from "../assets/chart-down.svg";
@@ -6,7 +6,7 @@ import chartDown from "../assets/chart-down.svg";
 import styles from "./tableCoin.module.css";
 import { getMarketChart } from "../services/cryptoApi";
 
-function TableData({ currency, setChart, coin }) {
+function TableData({ currency, setChart, coin, currentCoin }) {
   const {
     id: coin_name,
     image,
@@ -25,9 +25,21 @@ function TableData({ currency, setChart, coin }) {
       setChart(null);
     }
   };
+
+  const rowRef = useRef(null);
+
+  useEffect(() => {
+    if (currentCoin && rowRef.current) {
+      rowRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, [currentCoin]);
+
   return (
     <>
-      <tr onClick={showHandler}>
+      <tr onClick={showHandler} ref={currentCoin === coin?.id ? rowRef : null}>
         <td>
           <div className={styles.symbol}>
             <img src={image} />
