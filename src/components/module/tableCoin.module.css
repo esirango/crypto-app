@@ -21,6 +21,10 @@
   padding: 10px 0;
 }
 
+.table tbody {
+  overflow-x: scroll;
+}
+
 .table tbody tr {
   border-bottom: 1px solid #22262e;
   height: 80px;

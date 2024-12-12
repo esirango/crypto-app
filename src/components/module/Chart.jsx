@@ -25,7 +25,15 @@ function Chart({ setChart, chart }) {
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      onClick={(e) => {
+        console.log(e.target.classList.value);
+        if (e.target.classList.value.includes("container")) {
+          setChart(null);
+        }
+      }}
+    >
       <span className={styles.cross} onClick={() => setChart(null)}>
         X
       </span>

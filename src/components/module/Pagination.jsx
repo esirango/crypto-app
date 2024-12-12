@@ -18,6 +18,7 @@ function Pagination({ page, setPage }) {
       <button
         onClick={previousHandler}
         className={page === 1 ? styles.disabled : null}
+        disabled={page === 1}
       >
         Previous
       </button>
@@ -35,7 +36,8 @@ function Pagination({ page, setPage }) {
 
       <button
         onClick={nextHandler}
-        className={page === 10 ? styles.disabled : null}
+        className={page === 9 ? styles.disabled : null}
+        disabled={page === 9}
       >
         Next
       </button>

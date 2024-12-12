@@ -37,7 +37,7 @@ function HomePage() {
         currency={currency}
         setChart={setChart}
       />
-      <Pagination page={page} setPage={setPage} />
+      <Pagination page={page} setPage={setPage} coinsLength={coins?.length} />
       {!!chart && <Chart chart={chart} setChart={setChart} />}
     </div>
   );
