@@ -61,12 +61,21 @@ function Search({ setCurrency }) {
       {text && (
         <div className={styles.searchResults}>
           {isLoading && (
-            <RotatingLines
-              width="50px"
-              height="50px"
-              strokeColor="#3874ff"
-              strokeWidth="2"
-            />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                margin: "20px",
+              }}
+            >
+              <RotatingLines
+                width="50px"
+                height="50px"
+                strokeColor="#3874ff"
+                strokeWidth="2"
+              />
+            </div>
           )}
           <ul>
             {coins.map((coin) => (
