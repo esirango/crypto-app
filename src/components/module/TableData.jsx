@@ -27,9 +27,9 @@ function TableData({ currency, setChart, coin }) {
   };
   return (
     <>
-      <tr>
+      <tr onClick={showHandler}>
         <td>
-          <div className={styles.symbol} onClick={showHandler}>
+          <div className={styles.symbol}>
             <img src={image} />
             <span>{symbol.toUpperCase()}</span>
           </div>

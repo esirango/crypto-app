@@ -30,12 +30,12 @@
   height: 80px;
   font-size: 1.1rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .symbol {
   display: flex;
   align-items: center;
-  cursor: pointer;
 }
 
 .symbol img {
